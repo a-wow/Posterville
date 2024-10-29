@@ -36,6 +36,7 @@ body {
         }
 
         .post {
+            position: relative;
             margin-bottom: 20px;
             padding: 15px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -213,3 +214,74 @@ body {
     color: red;
     margin: 10px 0;
 }
+
+.comments {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.comment img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-date {
+    margin-left: 10px;
+    color: #666;
+}
+
+.comment-form {
+    margin-top: 10px;
+}
+
+.comment-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.comment-form button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.discussion-btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.discussion-btn:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
