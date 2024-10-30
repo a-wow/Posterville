@@ -64,12 +64,24 @@ if (isset($_GET['username'])) {
         <?php endif; ?>
         <div class="information">
             <h2>Информация:</h2>
-            <p><strong>Возраст:</strong> <?= htmlspecialchars($age) ?></p>
-            <p><strong>Страна:</strong> <?= htmlspecialchars($country) ?></p>
-            <p><strong>E-mail:</strong> <?= htmlspecialchars($email) ?></p>
-            <p><strong>Личный сайт:</strong> <a href="<?= htmlspecialchars($personal_website) ?>" target="_blank"><?= htmlspecialchars($personal_website) ?></a></p>
-            <p><strong>GitHub:</strong> <a href="<?= htmlspecialchars($github_profile) ?>" target="_blank"><?= htmlspecialchars($github_profile) ?></a></p>
-            <p><strong>О себе:</strong> <?= nl2br(htmlspecialchars($bio)) ?></p>
+            <?php if ($age): ?>
+                <p><strong>Возраст:</strong> <?= htmlspecialchars($age) ?></p>
+            <?php endif; ?>
+            <?php if ($country): ?>
+                <p><strong>Страна:</strong> <?= htmlspecialchars($country) ?></p>
+            <?php endif; ?>
+            <?php if ($email): ?>
+                <p><strong>E-mail:</strong> <?= htmlspecialchars($email) ?></p>
+            <?php endif; ?>
+            <?php if ($personal_website): ?>
+                <p><strong>Личный сайт:</strong> <a href="<?= htmlspecialchars($personal_website) ?>" target="_blank"><?= htmlspecialchars($personal_website) ?></a></p>
+            <?php endif; ?>
+            <?php if ($github_profile): ?>
+                <p><strong>GitHub:</strong> <a href="<?= htmlspecialchars($github_profile) ?>" target="_blank"><?= htmlspecialchars($github_profile) ?></a></p>
+            <?php endif; ?>
+            <?php if ($bio): ?>
+                <p><strong>О себе:</strong> <?= nl2br(htmlspecialchars($bio)) ?></p>
+            <?php endif; ?>
         </div>
     </div>
 </body>
