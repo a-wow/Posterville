@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'db.php';
+require 'config/db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login");
+    header("Location: auth");
     exit;
 }
 
@@ -40,32 +40,37 @@ if (isset($_GET['username'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Аккаунт <?= htmlspecialchars($requested_username) ?></title>
-    <link rel="stylesheet" href="styles/account.css">
+    <title>Профиль <?= htmlspecialchars($requested_username) ?></title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="/">Постервиль</a></li>
-            <li><a href="profile">Настройки</a></li>
-            <li><a href="logout">Выйти</a></li>
+            <li>
+                <a href="/"><img src="uploads/logo/logo.png" alt="Постервиль" style="height: 40px; width: auto;" /><a>
+            </li>
+            <li style="position: absolute; top: 10px; right: 10px;">
+                <button id="logoutBtn" class="logout-button" onclick="window.location.href='logout'">&times;</button>
+            </li>
         </ul>
     </nav>
 
-     <div class="form-container">
+    <div class="account">
         <h1><?= htmlspecialchars($requested_username) ?></h1>
         <?php if ($current_image): ?>
-            <img src="<?= htmlspecialchars($current_image) ?>" alt="Изображение профиля" class="profile-image">
+            <img src="<?= htmlspecialchars($current_image) ?>" alt="Изображение профиля" class="account-profile-image">
         <?php else: ?>
             <p>У этого пользователя нет изображения профиля.</p>
         <?php endif; ?>
-        <h2>Информация</h2>
-        <p><strong>Возраст:</strong> <?= htmlspecialchars($age) ?></p>
-        <p><strong>Страна:</strong> <?= htmlspecialchars($country) ?></p>
-        <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
-        <p><strong>Личный сайт:</strong> <a href="<?= htmlspecialchars($personal_website) ?>" target="_blank"><?= htmlspecialchars($personal_website) ?></a></p>
-        <p><strong>GitHub:</strong> <a href="<?= htmlspecialchars($github_profile) ?>" target="_blank"><?= htmlspecialchars($github_profile) ?></a></p>
-        <p><strong>О себе:</strong> <?= nl2br(htmlspecialchars($bio)) ?></p>
+        <div class="information">
+            <h2>Информация:</h2>
+            <p><strong>Возраст:</strong> <?= htmlspecialchars($age) ?></p>
+            <p><strong>Страна:</strong> <?= htmlspecialchars($country) ?></p>
+            <p><strong>E-mail:</strong> <?= htmlspecialchars($email) ?></p>
+            <p><strong>Личный сайт:</strong> <a href="<?= htmlspecialchars($personal_website) ?>" target="_blank"><?= htmlspecialchars($personal_website) ?></a></p>
+            <p><strong>GitHub:</strong> <a href="<?= htmlspecialchars($github_profile) ?>" target="_blank"><?= htmlspecialchars($github_profile) ?></a></p>
+            <p><strong>О себе:</strong> <?= nl2br(htmlspecialchars($bio)) ?></p>
+        </div>
     </div>
 </body>
 </html>
