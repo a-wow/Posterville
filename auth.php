@@ -35,6 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 }
+
+$randomUsersQuery = "SELECT username, profile_image FROM users ORDER BY RAND() LIMIT 10";
+$randomUsersResult = $db->query($randomUsersQuery);
+$randomUsers = [];
+
+if ($randomUsersResult->num_rows > 0) {
+    while ($row = $randomUsersResult->fetch_assoc()) {
+        $randomUsers[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,6 +90,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<div class="information">
             <a href="#" onclick="showForm('login');">У меня уже есть аккаунт</a>
 			</div>
+        </div>
+    </div>
+	<div class="rand-users">
+        <h3>Пользователи, которых вы могли бы узнать:</h3>
+        <div class="user-images">
+            <?php foreach ($randomUsers as $user): ?>
+                <div class="user-circle">
+				<a href="/@<?php echo htmlspecialchars($user['username']); ?>">
+                    <img src="<?php echo htmlspecialchars($user['profile_image']); ?>" alt="<?php echo htmlspecialchars($user['username']); ?>">
+				</a>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>
