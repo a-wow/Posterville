@@ -194,6 +194,7 @@ body {
     border: 1px solid #00796b;
     border-radius: 5px;
     margin-bottom: 10px;
+	outline: none; /* обводка auth */
 }
 
 .login-container button {
