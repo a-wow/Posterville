@@ -2,10 +2,10 @@
 session_start();
 require 'config/db.php';
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: auth");
-    exit;
-}
+//if (!isset($_SESSION['user_id'])) {
+//    header("Location: auth");
+//    exit;
+//}
 
 $username = null;
 $age = null;
@@ -64,7 +64,7 @@ if (isset($_GET['username'])) {
         <?php endif; ?>
         <div class="information">
             <h2>Информация:</h2>
-            <p><strong>Возраст:</strong> <?= htmlspecialchars($age) ?></p>
+            <p>Возраст:</strong> <?= htmlspecialchars($age) ?></p>
             <p><strong>Страна:</strong> <?= htmlspecialchars($country) ?></p>
             <p><strong>E-mail:</strong> <?= htmlspecialchars($email) ?></p>
             <p><strong>Личный сайт:</strong> <a href="<?= htmlspecialchars($personal_website) ?>" target="_blank"><?= htmlspecialchars($personal_website) ?></a></p>
