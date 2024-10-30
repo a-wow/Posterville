@@ -82,10 +82,11 @@ body {
         form textarea {
             width: 94%;
             padding: 10px;
-            border: 1px solid #00796b;
-            border-radius: 5px;
+            border: 0px solid #00796b;
+            border-radius: 0px; /* пост */
             margin-bottom: 10px;
             resize: none;
+			outline: none; /* обводка поста */
         }
 
         form button {
@@ -119,7 +120,7 @@ body {
             background-color: #ffffff;
             margin: 15% auto;
             padding: 20px;
-            border: 1px solid #888;
+            border: 0px solid #888; /* формы */
             width: 90%;
             max-width: 400px;
             border-radius: 10px;
@@ -328,6 +329,7 @@ body {
     width: 90%;
     max-width: 500px;
     border-radius: 10px;
+	outline: none; /* обводка комментариев */
 }
 
 .modal-content h2 {
@@ -348,9 +350,10 @@ body {
 .modal-content textarea {
     width: calc(100% - 20px); 
     padding: 10px;
-    border: 1px solid #00796b;
+    border: 0px solid #00796b;
     border-radius: 5px;
     margin-bottom: 15px;
+	outline: none; /* обводка редактирования */
 }
 
 .closeModal {
