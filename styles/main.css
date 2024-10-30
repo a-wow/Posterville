@@ -285,3 +285,130 @@ body {
     transform: scale(1.05);
 }
 
+.edit-profile-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 90px;
+    width: 50px;
+    height: 50px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-profile-btn:hover {
+    background-color: #004d40;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.modal-content h2 {
+    color: #00796b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="url"],
+.modal-content input[type="number"],
+.modal-content textarea {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.closeModal {
+    float: right;
+    cursor: pointer;
+}
+
+.modal-content button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: #004d40;
+}
+
+.upload-image-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 160px;
+    width: 50px;
+    height: 50px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-image-btn:hover {
+    background-color: #004d40;
+}
+
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c62828;
+}
