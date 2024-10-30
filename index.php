@@ -70,7 +70,9 @@ foreach ($posts as &$post) {
                         <button type="submit">Отправить</button>
                     </form>
                     <div class="comments">
-                        <?php foreach ($post['comments'] as $comment): ?>
+                        <?php 
+                        $reversed_comments = array_reverse($post['comments']);
+                        foreach ($reversed_comments as $comment): ?>
                             <div class="comment">
                                 <img src="<?= htmlspecialchars($comment['profile_image']) ?>" alt="Profile Image" class="profile-image">
                                 <div class="comment-content">
