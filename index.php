@@ -100,7 +100,6 @@ foreach ($posts as &$post) {
     <div id="profileEditModal" class="modal">
         <div class="modal-content">
             <span id="closeProfileEditModal" class="closeModal" aria-label="Close Modal">&times;</span>
-            <h2>Редактирование профиля</h2>
             <form id="profileEditForm" method="post" action="functions/profile.php" enctype="multipart/form-data">
                 <label for="age">Возраст:</label>
                 <input type="number" id="age" name="age" placeholder="Ваш возраст...">
@@ -128,14 +127,15 @@ foreach ($posts as &$post) {
     <div id="imageUploadModal" class="modal">
         <div class="modal-content">
             <span id="closeImageUploadModal" class="closeModal" aria-label="Close Modal">&times;</span>
-            <h2>Загрузка изображений</h2>
 
-            <form id="imageUploadForm" method="post" action="functions/profile.php" enctype="multipart/form-data">
+            <form id="imageUploadForm" method="post" action="functions/profile.php" enctype="multipart/form-data" class="upload-form">
+                <h2>Загрузка изображений</h2>
+    
                 <label for="profile_image">Изображение профиля:</label>
-                <input type="file" id="profile_image" name="profile_image">
+                <input type="file" id="profile_image" name="profile_image" accept="image/*" required>
 
                 <label for="background_image">Фоновое изображение:</label>
-                <input type="file" id="background_image" name="background_image">
+                <input type="file" id="background_image" name="background_image" accept="image/*" required>
 
                 <button type="submit">Загрузить изображения</button>
             </form>
