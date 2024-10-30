@@ -25,9 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (isset($_POST['register'])) {
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $profileImage = 'uploads/user.jpg';
 
-        $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $password);
+        $stmt = $db->prepare("INSERT INTO users (username, password, profile_image) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $password, $profileImage);
         $stmt->execute();
 
         header("Location: auth");
