@@ -65,7 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="hidden" name="login" value="1">
                 <button type="submit">Войти</button>
             </form>
+			<div class="information">
             <a href="#" onclick="showForm('register');">Зарегистрироваться</a>
+			</div>
         </div>
 
         <div id="registerForm" class="form" style="display: none;">
@@ -75,7 +77,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="hidden" name="register" value="1">
                 <button type="submit">Регистрация</button>
             </form>
+			<div class="information">
             <a href="#" onclick="showForm('login');">У меня уже есть аккаунт</a>
+			</div>
         </div>
     </div>
 </body>
