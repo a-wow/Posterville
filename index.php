@@ -36,14 +36,14 @@ foreach ($posts as &$post) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMS</title>
+    <title>Posterville</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <nav>
         <ul>
             <li>
-                <img src="uploads/logo/logo.png" alt="Постервиль" style="height: 40px; width: auto;" />
+                <a href="/"><img src="uploads/logo/logo.png" alt="Постервиль" style="height: 40px; width: auto;" /><a>
             </li>
             <li style="position: absolute; top: 10px; right: 10px;">
                 <button id="logoutBtn" class="logout-button" onclick="window.location.href='logout'">&times;</button>
